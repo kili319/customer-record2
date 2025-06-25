@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客户消费记录网站</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/leancloud-storage/dist/av-min.js"></script>
+</head>
+<body>
+    <h1>客户消费记录网站</h1>
+    <form id="record-form">
+        <input type="text" id="name" placeholder="客户姓名" required>
+        <input type="text" id="phone" placeholder="手机号" required pattern="^1[3-9]\d{9}$">
+        <input type="number" id="amount" placeholder="消费金额" required min="0">
+        <input type="text" id="coupon" placeholder="福利券">
+        <button type="submit">添加记录</button>
+        <button type="reset">重置</button>
+    </form>
+    <input type="text" id="search" placeholder="按姓名或手机号搜索...">
+    <table id="records-table">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>手机号</th>
+                <th>消费金额</th>
+                <th>日期</th>
+                <th>福利券</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 数据行自动生成 -->
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+    <script>
+        AV.init({
+            appId: '3djSZ8BQvEeBcOz6KtIMbuiN-gzGzoHsz',
+            appKey: 'f0Hg0HVuUip9S8sHrL2te3Si',
+            serverURLs: 'https://3djsz8bq.lc-cn-n1-shared.com' // 这里填 REST API 服务器地址
+        });
+    </script>
+</body>
+</html> 
